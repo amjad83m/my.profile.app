@@ -25,7 +25,7 @@
               <button type="button" id="add-hobby-btn" ng-click="mctrl.addHobby()" ng-show="!datasaved">Add Hobby</button>
               <button type="button" id="save-data-btn" ng-click="datasaved = true">Save Data</button>
             </div>
-              <ul>
+              <ul class="temp-ul">
                   <li ng-repeat="x in mctrl.hobbies" ng-show="!datasaved">
                       {{ x.name }}<br>
                       <input type="checkbox" name="favorite" ng-click="mctrl.changeHobbyState($index)">Favorite
