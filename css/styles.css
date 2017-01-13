@@ -1,0 +1,114 @@
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 320px;
+    background-color: #B2D1E5;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-weight: bold;
+    background-color: #3C8DC5;
+    text-align: center;
+}
+
+#result-div {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+.results {
+    width: 100%;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    background-color: white;
+}
+
+#wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.outer-input-div {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.inner-input-div {
+    padding: 20px;
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#first-name-input, #last-name-input, #hobby-input, #add-hobby-btn, #save-data-btn {
+    width: 80%;
+    outline: none;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+
+#add-hobby-btn, #save-data-btn {
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 20px;
+    background-color: #6FB7E9;
+    color: white;
+}
+
+#first-name-input, #last-name-input, #hobby-input {
+    display: inline-block;
+    border: 1px solid #cccccc;
+    font-weight: bold;
+    padding: 8px 4px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    color: #6FB7E9;
+    min-width: 180px;
+}
+
+.results-ul {
+    text-align: left;
+    font-size: 12px;
+    color: black;
+}
+
+@media screen and (min-width: 480px) {
+    #query, .results-ul, #link-p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    #query, .results-ul, #link-p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #query, .results-ul, #link-p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #query, .results-ul, #link-p {
+        font-size: 20px;
+    }
+    #wrapper {
+        width: 1024px;
+    }
+}

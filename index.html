@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Profile App - AngularJS Demo</title>
+        <meta name="description" content="Using AngularJS to build a profile app">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <meta name="author" content="Amjad Muhammad">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    </head>
+    
+    <body ng-app="myProfileApp">
+        <div id="wrapper" ng-controller="MainController as mctrl">
+            <header>
+                <h1>My Profile App</h1>
+            </header>
+          <div class="outer-input-div">
+            <div class="inner-input-div">
+              <input id="first-name-input" type="text" placeholder="First Name" ng-model="mctrl.firstName" ng-disabled="datasaved">
+              <input id="last-name-input" type="text" placeholder="Last Name" ng-model="mctrl.lastName" ng-disabled="datasaved">
+              <input id="hobby-input" type="text" placeholder="Hobby" ng-model="mctrl.hobbyName">
+              <button type="button" id="add-hobby-btn" ng-click="mctrl.addHobby()" ng-show="!datasaved">Add Hobby</button>
+              <button type="button" id="save-data-btn" ng-click="datasaved = true">Save Data</button>
+            </div>
+              <ul>
+                  <li ng-repeat="x in mctrl.hobbies" ng-show="!datasaved">
+                      {{ x.name }}<br>
+                      <input type="checkbox" name="favorite" ng-click="mctrl.changeHobbyState($index)">Favorite
+                      <button type="button" ng-click="mctrl.deleteHobby($index)">Delete Hobby</button>
+                  </li>
+              </ul>
+          </div><br>    
+        <div id="result-div" ng-show="datasaved">
+            <p>Full Name: {{mctrl.firstName + " " + mctrl.lastName}} </p>
+            <p>List of Hobbies:</p>
+            <ul class="results-ul">
+                <li ng-repeat="x in mctrl.hobbies">
+                    {{ x.name }} <span ng-show="x.favorite"> (Favorite)</span><br>
+                </li>
+            </ul>
+        </div>
+            
+        </div>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/controllers/MainController.js"></script>
+    </body>
+</html>
